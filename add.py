@@ -1,5 +1,4 @@
 import csv
-
 courses = ('I', 'II', 'III', 'IV')
 
 
@@ -93,14 +92,17 @@ def addTeacher():
             count += 1
         count += 1
         user_mas.append(count)
-    user = input('Введите ФИО преподавателя')
+    user = input('Введите ФИО преподавателя: ')
     user_mas.append(user)
-    user = input('Введите дату рождения преподавателя')
+    user = input('Введите дату рождения преподавателя: ')
     user_mas.append(user)
-    user = input('Введите дату трудоустройтсва преподавателя')
+    user = input('Введите дату трудоустройтсва преподавателя: ')
     user_mas.append(user)
-    user = input('Введите предмет преподавателя')
+    user = input('Введите предмет преподавателя: ')
     user_mas.append(user)
+    with open('teachers.csv', mode='a', encoding='utf-8') as file:
+        file_write = csv.writer(file, delimiter=';', lineterminator='\r')
+        file_write.writerow(user_mas)
 
 
 def addFaculties():

@@ -1,2 +1,2 @@
 from userView import *
-user_view()
+print(user_view())
